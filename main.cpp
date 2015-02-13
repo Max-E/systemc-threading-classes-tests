@@ -40,15 +40,18 @@ sc_thread_pool_t pool_mutex (mutex_worker, (void *)"worker 1");
 
 int main (int argc, char *argv[])
 {
+	printf("Threading test start\n");
 	pool_hello.execute ();
 	pool_hi.execute ();
 
+
+	printf("Threading test done\n\nMutex test start\n");
 	time_t start, end;
 	time(&start);
 	pool_mutex.execute ();
 	time(&end);
 	double time_passed = difftime(end, start);
-	printf("time passed: %f seconds\n", time_passed);
+	printf("Mutex test done. Time passed: %f seconds\n", time_passed);
 
 	return 0;
 }
