@@ -48,7 +48,7 @@ int main (int argc, char *argv[])
 	pool_mutex.execute ();
 	time(&end);
 	double time_passed = difftime(end, start);
-	printf("time passed: %f seconds\n", time_passed);
+	printf("time passed: %f\n", time_passed);
 
 	return 0;
 }
